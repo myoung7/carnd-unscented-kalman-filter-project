@@ -432,7 +432,7 @@ void UKF::UpdateRadar(MeasurementPackage meas_package) {
     
     float NIS = z_diff.transpose() * S.inverse() * z_diff;
     
-    cout << "NIS (RADAR): " NIS << endl;
+    cout << "NIS (RADAR): " << NIS << endl;
     cout << "x_ = " << x_ << endl;
     cout << "P_ = " << P_ << endl << endl;
 }
