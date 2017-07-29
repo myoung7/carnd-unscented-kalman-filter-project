@@ -172,10 +172,6 @@ void UKF::Prediction(double delta_t) {
     
     x_aug.head(n_x_) = x_;
     
-    if (x_aug(4) < ACCURACY_CHECK_VALUE) {
-        x_aug(4) = 0;
-    }
-    
     P_aug.topLeftCorner(n_x_,n_x_) = P_;
     P_aug(n_x_,n_x_)     = pow(std_a_, 2);
     P_aug(n_x_+1,n_x_+1) = pow(std_yawdd_,2);
